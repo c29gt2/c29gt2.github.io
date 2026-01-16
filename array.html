@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<style type=text/css>
+
+#chipotle{
+background-image: url(chipotle.jpg);
+margin-top: 50px;
+margin-left: 50px;
+height: 300px;
+width: 200px;
+background-size: contain;
+background-repeat: no-repeat;
+position: absolute;
+}	
+
+#acaibowl{
+background-image: url(acai bowl.jpg);
+height: 300px;
+width: 200px;
+margin-top: 50px;
+margin-left: 250px;
+background-size: contain;
+background-repeat: no-repeat;
+position: absolute;
+}	
+
+#smoothie{
+background-image: url(smoothies.jpg);
+height: 300px;
+width: 200px;
+margin-top: 50px;
+margin-left: 430px;
+background-size: contain;
+background-repeat: no-repeat;
+position: absolute;
+}	
+
+#bagels{
+background-image: url(bagels.jpg);
+height: 300px;
+width: 200px;
+margin-top: 50px;
+margin-left: 670px;
+background-size: contain;
+background-repeat: no-repeat;
+position: absolute;
+}	
+
+#sushi{
+background-image: url(sushi.jpg);
+height: 300px;
+width: 200px;
+margin-top: 50px;
+margin-left: 900px;
+background-size: contain;
+background-repeat: no-repeat;
+position: absolute;
+}
+
+#tacos{
+background-image: url(tacos.jpg);
+height: 300px;
+width: 200px;
+margin-top: 50px;
+margin-left: 1100px;
+background-size: contain;
+background-repeat: no-repeat;
+position: absolute;
+}	
+
+#burgers{
+background-image: url(burgers.jpg);
+height: 300px;
+width: 200px;
+margin-top: 400px;
+margin-left: 50px;
+background-size: contain;
+background-repeat: no-repeat;
+position: absolute;
+}		
+
+#fries{
+background-image: url(fries.jpg);
+height: 300px;
+width: 200px;
+margin-top: 350px;
+margin-left: 300px;
+background-size: contain;
+background-repeat: no-repeat;
+position: absolute;
+}	
+
+#pizza{
+background-image: url(pizza.jpg);
+height: 300px;
+width: 200px;
+margin-top: 350px;
+margin-left: 500px;
+background-size: contain;
+background-repeat: no-repeat;
+position: absolute;
+}	
+
+#pasta{
+background-image: url(pasta.jpg);
+height: 300px;
+width: 200px;
+margin-top: 350px;
+margin-left: 700px;
+background-size: contain;
+background-repeat: no-repeat;
+position: absolute;
+}	
+
+#caesarsalad{
+background-image: url(caesar salad.jpg);
+height: 300px;
+width: 200px;
+margin-top: 350px;
+margin-left: 850px;
+background-size: contain;
+background-repeat: no-repeat;
+position: absolute;
+}
+
+#icecream{
+background-image: url(ice cream.jpg);
+height: 300px;
+width: 200px;
+margin-top: 350px;
+margin-left: 1050px;
+background-size: contain;
+background-repeat: no-repeat;
+position: absolute;
+}		
+
+
+	</style>
+	
+</head>
+<body>
+
+	<center>
+		<div id="title">what should i eat today?</div>	
+		<div id="click">click!</div>	
+	</center>
+
+	<script type="text/javascript">
+
+let food = ["chipotle", "acai bowl", "smoothie", "bagels", "sushi", "tacos", "burgers", "fries", "pizza", "pasta", "caesar salad", "ice cream"]
+
+document.addEventListener("click", function(){
+	let random = Math.round(Math.random()*7)
+	console.log(random)
+
+	alert(food[random])
+	
+})
+	</script>
+
+<div id=chipotle></div>
+<div id=acaibowl></div>
+<div id=smoothie></div>
+<div id=bagels></div>
+<div id=sushi></div>
+<div id=tacos></div>
+<div id=burgers></div>
+<div id=fries></div>
+<div id=pizza></div>
+<div id=pasta></div>
+<div id=caesarsalad></div>
+<div id=icecream></div>
+
+</body>
+</html>

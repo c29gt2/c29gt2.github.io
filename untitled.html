@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<style type="text/css">
+		#georgie{
+			background-color: lightpink;
+			width: 200px;
+			height: 200px;
+		}
+	
+	</style>
+</head>
+<body>
+
+<div id="georgie"></div>
+
+<audio id="bomboclat" src="buzzer.m4a"></audio>
+<script type="text/javascript">
+
+georgie.addEventListener("mouseenter", function(){
+	bomboclat.play()
+
+})
+georgie.addEventListener("mouseleave", function(){
+	bomboclat.pause()
+})
+
+
+</body>
+</html>

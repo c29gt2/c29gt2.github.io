@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<style type="text/css">
+
+		#dog{
+	width: 300px;
+	height: 100px;
+	position: absolute;
+	background-image: url(https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/ce8b1e76965389.5c7945b0cffef.gif);
+	background-size: contain;
+	background-repeat: no-repeat;
+
+}
+
+#stripe{
+	width:100%;
+	height: 100px;
+	background-color: lightyellow;
+}
+
+#dog2{
+	width: 300px;
+	height: 100px;
+	position: absolute;
+	background-image: url(https://mir-s3-cdn-cf.behance.net/project_modules/1400/a6d30376965389.5c7945b0d02b6.gif);
+	background-size: contain;
+	background-repeat: no-repeat;
+	margin-top: 100px;
+}
+
+#stripe2{
+	width:100%;
+	height: 100px;
+	background-color: lightyellow;
+	margin-top: 100px;
+}
+
+
+#dog3{
+background-image: url(https://mir-s3-cdn-cf.behance.net/project_modules/1400/3035fb76965389.5c7945b0d0567.gif);
+width: 300px;
+	height: 100px;
+	position: absolute;
+	background-size: contain;
+	background-repeat: no-repeat;
+	margin-top: 100px;
+}
+
+#stripe3{
+	width:100%;
+	height: 100px;
+	background-color: lightyellow;
+	margin-top: 100px;
+}
+
+#dog4{
+	width: 300px;
+	height: 100px;
+background-image: url(https://mir-s3-cdn-cf.behance.net/project_modules/1400/74731f76965389.5c7945b0cfcc3.gif);
+	position: absolute;
+	background-size: contain;
+	background-repeat: no-repeat;
+	margin-top: 100px;
+}
+
+#stripe4{
+	width:100%;
+	height: 100px;
+	background-color: lightyellow;
+	margin-top: 100px;
+}
+
+</style>
+</head>
+<body>
+
+<center>
+	type for puppies
+</center>
+
+
+<div id= "dog"></div>
+
+<div id= "stripe"></div>
+
+<div id= "dog2"></div>
+
+<div id="stripe2"></div>
+
+<div id="dog3"></div>
+
+<div id="stripe3"></div>
+
+<div id="dog4"></div>
+
+<div id="stripe4"></div>
+
+<script type="text/javascript">
+
+dog.style.left="0px"
+document.addEventListener("keypress", function(){
+
+	dog.style.left = parseInt(dog.style.left)+10+"px"
+	console.log("doggy")
+
+})
+
+	dog2.style.left="0px"
+document.addEventListener("keypress", function(){
+
+	dog2.style.left = parseInt(dog2.style.left)+5+"px"
+	console.log("doggy2")
+})
+
+dog4.style.left="0px"
+document.addEventListener("keypress", function(){
+
+	dog4.style.left = parseInt(dog4.style.left)+15+"px"
+	console.log("doggy4")
+})
+
+
+</script>
+
+</body>
+</html>

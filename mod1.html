@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<style type=text/css>
+
+	#square{
+		height: 300px;
+		width: 300px;
+		background-color: lightpink;
+		margin-top: 200px;
+		margin-left: 500px;
+		font-size: 100px;
+		color: white;
+
+
+	}
+
+
+
+	</style>
+	
+</head>
+<body>
+
+	<div id=square>click the box</div>
+
+
+	<script type="text/javascript">
+
+		let clicks=0
+		square.addEventListener("click", function(){
+
+			clicks=clicks+1
+			console.log(clicks)
+
+			if (clicks%2==1) {
+			alert ("odd")
+			 }
+
+			 if (clicks%2==0) {
+			 	alert ("even")
+			 }
+		})
+		
+	</script>
+
+</body>
+</html>

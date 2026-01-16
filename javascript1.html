@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<style type="text/css">
+		#georgie{
+			background-color: lightpink;
+			width: 200px;
+			height: 200px;
+		}
+	
+	</style>
+</head>
+<body>
+
+<div id="georgie"></div>
+
+<audio id="buzz" src="untitled.m4a"></audio>
+<script type="text/javascript">
+
+georgie.addEventListener("mouseenter", function(){
+	console.log("hi")
+	buzz.play()
+
+})
+georgie.addEventListener("mouseleave", function(){
+	buzz.pause()
+})
+
+</script>
+
+
+</body>
+</html>

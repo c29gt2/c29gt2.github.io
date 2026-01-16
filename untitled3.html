@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<style type="text/css">
+	#snowman{
+		width: 250px;
+		height: 250px;
+		background-color: white;
+		background-image: url(https://img.freepik.com/free-vector/snowman-white-background_1308-129746.jpg);
+		position: absolute;
+		background-position: center;
+		background-size: contain;
+		background-repeat: no-repeat;
+	}
+
+	</style>
+</head>
+
+<body>
+
+
+<div id="snowman"></div>
+
+<script type="text/javascript"
+
+snowman.style.left="0px"
+
+snowman.addEventListener("click", function(){
+	snowman.style.backgroundImage="url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSgQw2_7VPsJvy4j7u_od71Ix2RAiX2yVfFtw&s)"
+})
+	document.addEventListener("keypress", function(){
+
+		snowman.style.left=parseInt(snowman.style.left)+10+"px"
+})
+
+</script>
+</body>
+</html>
