@@ -6,11 +6,128 @@
 
 	body{
 				margin:0px;
+				cursor: url(heart_with_bgc.png), auto;
 			}
-
 	a{
 		text-decoration: none;
 	}
+
+#palmtree{
+	background-image: url(palmtree.jpg);
+	height: 1000px;
+	width: 1000px;
+	background-size: contain;
+	position: absolute;
+	background-repeat: no-repeat;
+	margin-left: 650px;
+	margin-top: 100px;
+	z-index: 5;
+}
+
+#ocean{
+	background-image: url(ocean.jpg);
+	height: 800px;
+	width: 800px;
+	position: absolute;
+	background-repeat: no-repeat;
+	background-size: contain;
+	margin-top: 600px;
+}
+
+#shell{
+	background-image: url(shell.jpg);
+	height: 500px;
+	width: 500px;
+	background-repeat: no-repeat;
+	background-size: contain;
+	position: absolute;
+	margin-left: 375px;
+	margin-top: 260px;
+	z-index: 50;
+	transition: transform 0.6s ease;
+}
+
+#shell:hover{
+  transform: scale(0.85);
+}
+
+#shell2{
+	background-image: url(shell2.jpg);
+	height: 350px;
+	width: 350px;
+	background-repeat: no-repeat;
+	background-size: contain;
+	position: absolute;
+	margin-top: 300px;
+	transition: transform 0.6s ease;
+}
+
+#shell2:hover{
+  transform: scale(0.85);
+}
+
+#starfish{
+	background-image: url(starfish.jpg);
+	height: 400px;
+	width: 400px;
+	background-repeat: no-repeat;
+	background-size: contain;
+	position: absolute;
+	margin-left: 275px;
+	z-index: 20;
+  	transition: transform 0.6s ease;
+}
+
+#starfish:hover{
+  transform: scale(0.85);
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+
+#surfboard{
+	background-image: url(surfboard.png);
+	height: 800px;
+	width: 600px;
+	background-repeat: no-repeat;
+	background-size: contain;
+	position: absolute;
+	margin-top: 650px;
+	margin-left:400px;
+	z-index: 10;
+}
+
+#surfboard:hover {
+  	animation: wiggle 1s ease-in-out;
+}
+
+@keyframes wiggle {
+  0% { transform: rotate(0); }
+  25% { transform: rotate(10deg); }
+  50% { transform: rotate(-10deg); }
+  75% { transform: rotate(10deg); }
+  100% { transform: rotate(0); }
+}
+
+#coconut{
+	background-image: url(coconut2.jpg);
+	height: 100px;
+	width: 100px;
+	background-repeat: no-repeat;
+	background-size: contain;
+	position: absolute;
+	margin-top: 670px;
+	margin-left:1200px;
+	z-index: 100;
+	transition: transform 0.3s ease;
+}
+#coconut.crack {
+    background-image: url(coconut.jpg);
+    transition: transform 0.3s ease, background-image 0.3s ease;
+}
 
 	#link{
 	z-index: 10;
@@ -20,9 +137,9 @@
 	width:500px;
 	height:500px;
 	margin-left: 50px;
-}
+	}
 
-#link2{
+	#link2{
 	z-index: 10;
 	font-size: 50px;
 	color: black;
@@ -31,7 +148,7 @@
 	height:500px;
 	margin-left: 50px;
 	margin-top: 100px;
-}
+	}
 
 	
 
@@ -90,6 +207,17 @@
 	margin-top: 600px;
 	}
 
+	#link8{
+	z-index: 10;
+	font-size: 50px;
+	color: black;
+	position: absolute;
+	width:500px;
+	height:500px;
+	margin-left: 50px;
+	margin-top: 700px;
+	}
+
 
 	#header{
 		background-color: #ffe4e6;
@@ -105,19 +233,32 @@
 }
 
 
-
 </style>
 
 </head>
 <body>
 
-	<div id=flower></div>
-
 <div id=header>
 	<center>
 <div id=projectspage>projects page</div>
-</center>	
+	</center>
 </div>
+
+<div id=palmtree></div>
+<div id=ocean></div>
+<div id=shell></div>
+<div id=shell2></div>
+<div id=starfish></div>
+<div id=surfboard></div>
+<div id=coconut></div>
+
+	<script type=text/javascript>
+		const coconut = document.getElementById("coconut");
+
+  	coconut.addEventListener("click", () => {
+    	coconut.classList.add("crack");
+  	});
+  	</script>
 
 <a href=untitled5.html>
 <div id=link>snowman</div>
@@ -149,7 +290,9 @@
 <div id=link7>confetti</div>
 </a>
 
-</div>
+<a href=train.html>
+<div id=link8>train</div>
+</a>
 
 
 </body>

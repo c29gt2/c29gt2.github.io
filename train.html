@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style>
+		#train{
+			display:flex;
+			gap: 12px;
+		}
+		.cart{
+			border: 1px solid black;
+			min-width: 100px;
+			height: 80px;
+			text-align: center;
+			position: relative;
+		}
+		.cart:before{
+			content: "";
+			width: 30px;
+			height: 30px;
+			border: 1px solid black;
+			display: block;
+			border-radius: 50%;
+			position: absolute;
+			bottom: 0;
+			left: 10px;
+			background: white;
+
+		}
+		.cart:after{
+			content: "";
+		}
+	</style>
+
+
+</head>
+<body>
+<button id=add-person>add person</button>
+<button id=remove-last-person>remove last person</button>
+<input type="text" id="person">
+<script>
+	let people=["a","b","c"]
+	let addPersonBtn = document.getElementById("add-person")
+	//people.push("d")
+	//people.push("e")
+	//people.pop()
+	//people.pop()
+	console.log(people)
+	addPersonBtn.addEventListener("click",function(){
+		let personInput = document.getElementById("person")
+		people.push(personInput.value)
+		personInput.value=""
+		console.log(people)
+
+	})
+
+	let removeLastPersonBtn = document.getElementById("remove-last-person")
+	removeLastPersonBtn.addEventListener("click", function(){
+		people.pop()
+		console.log(people)
+	})
+
+</script>
+	<div id=train>
+		<div class=cart>a</div>
+		<div class=cart>b</div>
+		<div class=cart>c</div>
+		</div>
+</body>
+</html>
