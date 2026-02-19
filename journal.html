@@ -3,7 +3,10 @@
 <head>
 <style type="text/css">
 
-
+body{
+	margin: 0px;
+	cursor: url(images/heart_with_bgc.png), auto;
+}
 
 	#header{
 		background-color: #e0f2fe; 
@@ -21,29 +24,11 @@
 }
 
 #box{
-	width: 1200px;
+	width: 1300px;
 	height: 300px;
 	background-color: #F3EFE7;
 	margin-top: 50px;
 	margin-left: 50px;
-}
-
-
-#line{
-	background-color: black;
-	height: 1px;
-	width: 1000px;
-	margin-left: 50px;
-	margin-top: 20px;
-}
-
-
-#line2{
-	background-color: black;
-	height: 1px;
-	width: 1000px;
-	margin-left: 50px;
-	margin-top: 40px;
 }
 
 #firstentry{
@@ -52,6 +37,105 @@
 	margin-left: 5px;
 }
 
+#star{
+	background-image: url(images/star.png);
+	width: 200px;
+	height: 200px;
+	background-repeat: no-repeat;
+	position: absolute;
+	background-size: contain;
+	margin-left: 900px;
+	transition: transform 2s ease;
+}
+
+#star:hover {
+    transform: rotate(360deg); 
+}
+
+#star2{
+	background-image: url(images/star.png);
+	width: 100px;
+	height: 100px;
+	background-repeat: no-repeat;
+	position: absolute;
+	background-size: contain;
+	margin-left: 1125px;
+	margin-top: 125px;
+	transition: transform 2s ease;
+}
+
+#star2:hover {
+    transform: rotate(-360deg); 
+}
+
+#apple{
+	background-image: url(images/apple.png);
+	width: 175px;
+	height: 175px;
+	background-repeat: no-repeat;
+	position: absolute;
+	background-size: contain;
+	margin-left: 400px;
+	margin-top: 50px;
+	transition: transform 0.3s ease;
+}
+
+#apple.bite {
+    background-image: url(images/apple2.png);
+    transition: transform 0.3s ease, background-image 0.3s ease;
+}
+
+#nyc{
+	background-image: url(images/nyc.png);
+	width: 500px;
+	height: 520px;
+	background-repeat: no-repeat;
+	position: absolute;
+	background-size: contain;
+	margin-top: 160px;
+}
+#statue{
+	background-image: url(images/statue.png);
+	width: 400px;
+	height: 400px;
+	background-repeat: no-repeat;
+	position: absolute;
+	background-size: contain;
+	margin-left:50px;
+	margin-top: 300px;
+}
+
+#bridge{
+	background-image: url(images/bridge.png);
+	width: 500px;
+	height: 500px;
+	background-repeat: no-repeat;
+	position: absolute;
+	background-size: contain;
+	margin-top: 325px;
+	margin-left: 950px;
+}
+
+
+#taxi{
+	background-image: url(images/taxi.png);
+	width: 500px;
+	height: 500px;
+	background-repeat: no-repeat;
+	position: absolute;
+	background-size: contain;
+	margin-top: 350px;
+	animation: moveRight 3s forwards;
+}
+
+@keyframes moveRight {
+    from {
+        left: 0;  
+    }
+    to {
+        left: 800px; 
+    }
+}
 
 
 </style>
@@ -59,22 +143,32 @@
 <body>
 
 <div id=header>
-	
 	<center>
-	<div id=journalpage>journal page</div>
+<div id=journalpage>journal page</div>
 	</center>
-
 </div>
-
-<div id=background></div>
 
 <div id=box>
 
-<div id=firstentry>so far in comp sci 1 we have started our websites and made an index and projects, journal, and about me pages</div>
-<div id=line></div>
-<div id=line2></div>
+<div id=firstentry></div>
+<div id=star></div>
+<div id=star2></div>
+<div id=nyc></div>
+<div id=statue></div>
+<div id=bridge></div>
+<div id=taxi></div>
 
 </div>
+
+<div id=apple></div>
+	<script type=text/javascript>
+			const apple = document.getElementById("apple");
+
+  		apple.addEventListener("click", () => {
+    		apple.classList.add("bite");
+  		});
+  	</script>
+
 </body>
 	
 </html>

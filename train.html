@@ -22,33 +22,101 @@
 			display: block;
 			border-radius: 50%;
 			position: absolute;
-			bottom: 0;
+			bottom: -10px;
 			left: 10px;
 			background: white;
 
 		}
+		
 		.cart:after{
 			content: "";
+			width: 30px;
+			height: 30px;
+			border: 1px solid black;
+			display: inline-block;
+			border-radius: 50%;
+			position: absolute;
+			bottom: -10px;
+			left: 60px;
+			background: white;
 		}
 	</style>
 
 
 </head>
 <body>
+
+<input type="text" id="person">
+<input type="color" value="#ff0000" id="colorPicker">	
 <button id=add-person>add person</button>
 <button id=remove-last-person>remove last person</button>
-<input type="text" id="person">
+<div id="train">
+	
+</div>
+
 <script>
-	let people=["a","b","c"]
+	let georgie = {
+		name: "georgie",
+		studentId: "c29gt",
+		pronouns: "she/her",
+		fav_color: "pink",
+	}
+
+	let kelly = {
+		name: "kelly",
+		studentId: "c29kh",
+		pronouns: "she/her",
+		fav_color: "lightgreen",
+	}
+
+	let louie = {
+		name: "louie",
+		pronouns: "he/him",
+		fav_color: "lightblue",
+	}
+
+	let dalton={
+		year:1919,
+		studentNum: 500
+	}
+
+	let people=[kelly,louie, {name: "georgie", fav_color: "pink"}]
 	let addPersonBtn = document.getElementById("add-person")
-	//people.push("d")
-	//people.push("e")
-	//people.pop()
-	//people.pop()
-	console.log(people)
+
+		console.log(people)
+		console.log(georgie.fav_color)
+
+		people.push({
+			name: "person",
+			fav_color: "lightyellow",
+		})
+
+	let train=document.getElementById("train")
+	let colorPicker=document.getElementById("colorPicker")
+
+	function makeTrain(){
+		train.innerHTML = ""
+		for(let i = 0; i<people.length; i++){
+			let cart = document.createElement("div")
+			cart.textContent = people[i].name
+			cart.style.backgroundColor = people[i].fav_color
+			console.log(people[i])
+			cart.style.backgroundColor = people[i]
+			cart.classList.add("cart")
+			train.appendChild(cart)
+		}
+	}
+	makeTrain()
+
+	///let addPersonBtn = document.getElementById("add-person")
 	addPersonBtn.addEventListener("click",function(){
 		let personInput = document.getElementById("person")
-		people.push(personInput.value)
+		let colorInput = document.getElementById("colorPicker")
+		people.push({
+			name: personInput.value,
+			fav_color: colorPicker.value
+		})
+		makeTrain()
 		personInput.value=""
 		console.log(people)
 
@@ -57,14 +125,10 @@
 	let removeLastPersonBtn = document.getElementById("remove-last-person")
 	removeLastPersonBtn.addEventListener("click", function(){
 		people.pop()
+		makeTrain()
 		console.log(people)
 	})
 
 </script>
-	<div id=train>
-		<div class=cart>a</div>
-		<div class=cart>b</div>
-		<div class=cart>c</div>
-		</div>
 </body>
 </html>
