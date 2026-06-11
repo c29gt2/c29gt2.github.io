@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Trivia!</title>
+
+<style>
+
+body {
+    background: white;
+    text-align: center;
+    margin-top: 100px;
+}
+
+.quizbox {
+    background: pink;
+    max-width: 600px;
+    margin: auto;
+    border-radius: 16px;
+    color: white;
+    padding: 20px;
+}
+
+h1 {
+    margin-bottom: 10px;
+}
+
+button {
+    display: block;
+    width: 100%;
+    margin-top: 12px;
+    padding: 12px;
+    border: none;
+    border-radius: 10px;
+    background: white;
+    color: #111827;
+    font-size: 16px;
+    transition: 0.2s;
+}
+
+button:hover {
+    background: "white";
+    transform: scale(1.025);
+}
+
+#result {
+    margin-top: 20px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+#score {
+    margin-top: 15px;
+}
+
+</style>
+</head>
+
+<body>
+
+
+<div class="quizbox">
+
+    <h1>Trivia!</h1>
+
+    <h2 id="question">Question goes here</h2>
+
+    <div id="answers"></div>
+
+    <h3 id="score">Score: 0</h3>
+
+    <div id="result"></div>
+
+</div>
+
+<script>
+
+const questions = [
+
+    {
+        question: "Which of the following languages is not derived from Latin?",
+        answers: ["French", "Portuguese", "English", "Spanish"],
+        correct: "English"
+    },
+
+    {
+        question: "What is the strongest muscle in the human body?",
+        answers: ["Jaw", "Heart", "Glutes", "Calves"],
+        correct: "Jaw"
+    },
+
+    {
+        question: "What Italian city is famous for its system of canals?",
+        answers: ["Rome", "Naples", "Venice", "Florence"],
+        correct: "Venice"
+    },
+
+    {
+        question: "How long did dinosaurs live on the earth?",
+        answers: ["50-100 million years", "100-150 million years", "150-200 million years", "200+ million years"],
+        correct: "150-200 million years"
+    },
+
+    {
+        question: "How many plays did Shakespeare write?",
+        answers: ["27", "37", "47", "57"],
+        correct: "37"
+    },
+
+    {
+        question: "What city hosted the 2002 Olympic Games?",
+        answers: ["Tokyo", "Beijing", "Paris", "Sydney"],
+        correct: "Sydney"
+    },
+
+    {
+        question: "Which app has the most total users?",
+        answers: ["TikTok", "Instagram", "Snapchat", "YouTube"],
+        correct: "Instagram"
+    },
+
+    {
+        question: "Which of the following languages has the longest alphabet?",
+        answers: ["Russian", "Greek", "Arabic", "Spanish"],
+        correct: "Russian"
+    },
+
+    {
+        question: "Which of the following is not a fruit?",
+        answers: ["Tomatoes", "Avocados", "Okra", "Rhubarb"],
+        correct: "Rhubarb"
+    },
+
+    {
+        question: "What is the largest US state?",
+        answers: ["Texas", "Alaska", "California", "Montana"],
+        correct: "Alaska"
+    }
+
+];
+
+let currentQuestion = 0;
+let score = 0;
+
+const questionElement = document.getElementById("question");
+const answersElement = document.getElementById("answers");
+const scoreElement = document.getElementById("score");
+const resultElement = document.getElementById("result");
+
+function loadQuestion() {
+
+    answersElement.innerHTML = "";
+
+    let q = questions[currentQuestion];
+
+    questionElement.innerText = q.question;
+
+    q.answers.forEach(answer => {
+
+        let button = document.createElement("button");
+
+        button.innerText = answer;
+
+        button.onclick = function () {
+            checkAnswer(answer);
+        };
+
+        answersElement.appendChild(button);
+    });
+}
+
+function checkAnswer(answer) {
+
+    let correctAnswer = questions[currentQuestion].correct;
+
+    if (answer === correctAnswer) {
+        score++;
+        resultElement.innerText = "Correct!";
+    } else {
+        resultElement.innerText = "Wrong!";
+    }
+
+    scoreElement.innerText = "Score: " + score;
+
+    currentQuestion++;
+
+    if (currentQuestion < questions.length) {
+
+        setTimeout(() => {
+            resultElement.innerText = "";
+            loadQuestion();
+        }, 900);
+
+    } else {
+
+        questionElement.innerText = "Quiz Finished!";
+        answersElement.innerHTML = "";
+        resultElement.innerText =
+            "Final Score: " + score + " / " + questions.length;
+    }
+}
+
+loadQuestion();
+
+</script>
+
+</body>
+</html>

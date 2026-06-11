@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rate My Professor Clone</title>
+
+<style>
+
+body {
+    font-family: Arial, sans-serif;
+    background: #111827;
+    color: white;
+    margin: 0;
+    padding: 20px;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.container {
+    max-width: 800px;
+    margin: auto;
+    background: #1f2937;
+    padding: 25px;
+    border-radius: 12px;
+}
+
+input, textarea, select {
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    border: none;
+    font-size: 16px;
+}
+
+button {
+    background: #3b82f6;
+    color: white;
+    border: none;
+    padding: 12px 18px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+button:hover {
+    background: #2563eb;
+}
+
+.review {
+    background: #111827;
+    padding: 15px;
+    border-radius: 10px;
+    margin-top: 15px;
+}
+
+.rating {
+    color: gold;
+    font-size: 20px;
+}
+
+.averageBox {
+    margin-top: 20px;
+    padding: 15px;
+    background: #0f172a;
+    border-radius: 10px;
+}
+
+</style>
+</head>
+
+<body>
+
+<h1>Rate My Professor</h1>
+
+<div class="container">
+
+    <h2>Add Review</h2>
+
+    <input type="text" id="professorName" placeholder="Professor Name">
+
+    <select id="rating">
+        <option value="">Select Rating</option>
+        <option value="5">5 - Amazing</option>
+        <option value="4">4 - Good</option>
+        <option value="3">3 - Average</option>
+        <option value="2">2 - Difficult</option>
+        <option value="1">1 - Terrible</option>
+    </select>
+
+    <textarea id="reviewText" rows="4"
+        placeholder="Write your review..."></textarea>
+
+    <button onclick="addReview()">Submit Review</button>
+
+    <div class="averageBox">
+        <h3>Overall Stats</h3>
+        <p id="totalReviews">Total Reviews: 0</p>
+        <p id="averageRating">Average Rating: 0</p>
+    </div>
+
+    <h2>Reviews</h2>
+
+    <div id="reviewsContainer"></div>
+
+</div>
+
+<script>
+
+let reviews = [];
+
+function addReview() {
+
+    let professor =
+        document.getElementById("professorName").value;
+
+    let rating =
+        document.getElementById("rating").value;
+
+    let text =
+        document.getElementById("reviewText").value;
+
+    if (professor === "" || rating === "" || text === "") {
+        alert("Please fill out all fields.");
+        return;
+    }
+
+    let review = {
+        professor: professor,
+        rating: Number(rating),
+        text: text
+    };
+
+    reviews.push(review);
+
+    displayReviews();
+
+    clearForm();
+}
+
+function displayReviews() {
+
+    let container =
+        document.getElementById("reviewsContainer");
+
+    container.innerHTML = "";
+
+    let total = 0;
+
+    reviews.forEach(review => {
+
+        total += review.rating;
+
+        let stars = "⭐".repeat(review.rating);
+
+        let div = document.createElement("div");
+
+        div.classList.add("review");
+
+        div.innerHTML = `
+            <h3>${review.professor}</h3>
+            <div class="rating">${stars}</div>
+            <p>${review.text}</p>
+        `;
+
+        container.prepend(div);
+    });
+
+    let average = 0;
+
+    if (reviews.length > 0) {
+        average = (total / reviews.length).toFixed(1);
+    }
+
+    document.getElementById("totalReviews").innerHTML =
+        "Total Reviews: " + reviews.length;
+
+    document.getElementById("averageRating").innerHTML =
+        "Average Rating: " + average;
+}
+
+function clearForm() {
+
+    document.getElementById("professorName").value = "";
+
+    document.getElementById("rating").value = "";
+
+    document.getElementById("reviewText").value = "";
+}
+
+</script>
+
+</body>
+</html>

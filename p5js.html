@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>document</title>
+
+	<script src="https://cdn.jsdelivr.net/npm/p5@1.11.11/lib/p5.min.js"></script>
+</head>
+<body>
+	<script>
+		function setup() {
+		  createCanvas(500, 500);
+		}
+
+		function draw() {
+		  background("lightskyblue");
+		  noStroke()
+		  fill("tan")
+		  ellipse(250,250,300,300)
+		  fill("black")
+		  ellipse(175,220,20,30)
+		  ellipse(325,220,20,30)
+		  fill(88,57,39)
+		  triangle(70,150,170,150,110,250)
+		  triangle(320,150,430,150,370,250)
+		  fill(88,57,39)
+		  ellipse(250,300,150,100)
+		  fill("black")
+		  triangle(230,275,270,275,250,300)
+		  fill("red")
+		  rect(100,375,300,50)
+		  console.log(mouseX, mouseY)
+		  fill("yellow")
+		  ellipse(250,425,50,60)
+		  stroke("black")
+		  strokeWeight(5)
+		  line(250,300,250,325)
+		  noFill()
+  	      //arc(270, 320, 50, 50, 100, PI + QUARTER_PI, OPEN)
+  	      //arc(230, 320, 50, 50, 100, PI + QUARTER_PI, OPEN)
+  	      noStroke()
+  	      fill("pink")
+  	      //rect(235,325,30,50)
+
+		}
+	</script>
+
+</body>
+</html>

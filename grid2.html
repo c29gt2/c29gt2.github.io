@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+	<title></title>
+	<script src="https://cdn.jsdelivr.net/npm/p5@1.11.11/lib/p5.min.js"></script>
+
+</head>
+<body>
+	<script>
+		function setup(){
+			createCanvas(1500,800);
+		}
+		function draw(){
+			background("lightyellow")
+			fill("light blue")
+			for (let i=0; i<17; i++){
+			for (let j=0; j<20; j++){
+				let x=i*100
+				let y=j*100
+				strokeWeight(20)
+				stroke("pink")
+				line(10,10,60,60)
+				line(60,60,110,10)
+				line(110,10,160,60)
+				line(160,60,210,10)
+				stroke("orange")
+				line(10,40,60,90)
+				line(60,90,110,40)
+				line(110,40,160,90)
+				line(160,90,210,40)
+				stroke("lightblue")
+				line(10,70,60,120)
+				line(60,120,110,70)
+				line(110,70,160,120)
+				line(160,120,210,70)
+				
+			}
+			}
+		}
+	</script>
+</body>
+</html>

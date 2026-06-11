@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Document</title>
+	<script src="https://cdn.jsdelivr.net/npm/p5@1.11.13/lib/p5.min.js"></script>
+</head>
+<body>
+	<script>
+		function setup(){
+			createCanvas(1000,1000)
+		}
+		function draw(){
+			background("lightyellow")
+			push()
+			translate(300,300)
+			noStroke()
+			fill("tan")
+			circle(0,0,75)
+			circle(200,0,75)
+			fill("lightpink")
+			circle(0,0,50)
+			circle(200,0,50)
+			fill("tan")
+			circle(100,100,250)
+			fill("black")
+		  ellipse(50,75,20,30)
+		  ellipse(150,75,20,30)
+		  fill(88,57,39)
+		  ellipse(250,300,150,100)
+		  fill("black")
+		  triangle(200,300,300,200,75,200)
+			pop()
+
+			push()
+			rotate(frameCount*0.01)
+			noStroke()
+			circle(0-100,0-100,50)
+			circle(0+100,0-100,50)
+
+			circle(100,100,250)
+			pop()
+		}
+	</script>
+
+</body>
+</html>
